@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Valentine for Ivan</title>
+
+<style>
+body {
+    background-color: #800020; /* burgundy */
+    color: #f5f5dc; /* beige */
+    font-family: "Courier New", monospace;
+    text-align: center;
+    padding: 40px;
+    margin: 0;
+}
+
+h1 {
+    font-size: 40px;
+}
+
+button {
+    background-color: #f5f5dc; /* beife */
+    color: #3b0f19; /* wine text */
+    border: none;
+    padding: 12px 20px;
+    margin: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.2s;
+}
+
+button:hover {
+    background-color: #e8dcd3; /* slightly darker ivory */
+}
+
+.hidden {
+    display: none;
+}
+
+.box {
+    margin-top: 30px;
+}
+
+#noBtn {
+    position: relative;
+}
+</style>
+</head>
+
+<body>
+
+<h1>> Booting Valentine System...</h1>
+<p id="bootText"></p>
+
+<div id="mainContent" class="hidden">
+
+<h2>Technical Analysis Report: Ivan v1.0</h2>
+<p>Processor: 10/10 Brain Power 🧠</p>
+<p>Humor Module: Premium Edition Installed 😂</p>
+<p>Charm Factor: Dangerously High 😌</p>
+<p>Security Level: Makes Me Feel Safe 🛡️</p>
+<p>Debug Skills: Fixes My Bad Moods 🛠️</p>
+
+<div class="box">
+<h2>WARNING: High Attraction Alert Detected</h2>
+<button onclick="diagnose()">Run Diagnostic</button>
+<p id="diagnosticResult"></p>
+</div>
+
+<div class="box">
+<h2>Will you accept being my Valentine 2026?</h2>
+<button onclick="acceptLove()">ACCEPT 💖</button>
+<button id="noBtn" onmouseover="moveButton()">DECLINE</button>
+</div>
+
+<p id="finalMessage"></p>
+
+</div>
+
+<script>
+let text = "> Loading Love Protocol...<br>" +
+           "> Identifying User...<br>" +
+           "> User detected: Ivan<br>" +
+           "> Status: Extremely Handsome<br>" +
+           "> System Ready.";
+
+document.getElementById("bootText").innerHTML = text;
+
+setTimeout(() => {
+    document.getElementById("mainContent").classList.remove("hidden");
+}, 2000);
+
+function diagnose() {
+    document.getElementById("diagnosticResult").innerHTML =
+        "> Diagnosis Complete.<br>> Result: Still my favorite human.";
+}
+
+function moveButton() {
+    let btn = document.getElementById("noBtn");
+
+    let maxX = window.innerWidth - btn.offsetWidth;
+    let maxY = window.innerHeight - btn.offsetHeight;
+
+    btn.style.position = "absolute";
+    btn.style.left = Math.random() * maxX + "px";
+    btn.style.top = Math.random() * maxY + "px";
+}
+
+function acceptLove() {
+    document.getElementById("finalMessage").innerHTML =
+        "> Confirmation received.<br>" +
+        "> Love protocol permanently activated.<br>" +
+        "> Status: Married. Lucky 💍💖";
+}
+</script>
+
+</body>
+</html>
